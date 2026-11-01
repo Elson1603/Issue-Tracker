@@ -1,0 +1,30 @@
+# Environment variables & secrets
+.env
+.env.*
+!.env.example
+
+# Dependencies
+node_modules/
+backend/venv/
+
+# Python cache
+**/__pycache__/
+*.pyc
+
+# Local database files
+*.db
+*.sqlite3
+
+# Generated Excel reports
+backend/storage/reports/*
+!backend/storage/reports/.gitkeep
+
+# Build artifacts
+frontend/dist/
+
+# OS / Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
