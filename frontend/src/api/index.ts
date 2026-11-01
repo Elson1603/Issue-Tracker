@@ -11,8 +11,10 @@ import {
   TrendDataPoint
 } from '../types';
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '';
+
 const api = axios.create({
-  baseURL: '/api/v1',
+  baseURL: `${API_BASE_URL}/api/v1`,
   headers: {
     'Content-Type': 'application/json',
   },
@@ -108,7 +110,7 @@ export const reportsApi = {
   getDetail: (reportId: string) =>
     api.get<ReportDetail>(`/reports/${reportId}`).then(res => res.data),
 
-  getDownloadUrl: (reportId: string) => `/api/v1/reports/${reportId}/download`,
+  getDownloadUrl: (reportId: string) => `${API_BASE_URL}/api/v1/reports/${reportId}/download`,
 
   delete: (reportId: string) =>
     api.delete<{ success: boolean; message: string }>(`/reports/${reportId}`).then(res => res.data),
